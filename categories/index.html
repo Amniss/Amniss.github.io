@@ -128,6 +128,58 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -228,6 +280,61 @@
 			
 			友情链接
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -360,13 +467,79 @@
             </div>
             <div class="tag-chips">
                 
-                你目前还没有对文章进行分类.
+                
+                
+                <a href="/categories/%E7%9E%8E%E5%90%B9/" title="瞎吹: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">瞎吹
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
                 
             </div>
         </div>
     </div>
 </div>
 
+
+    
+    <style type="text/css">
+    #category-radar {
+        width: 100%;
+        height: 360px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="category-radar" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+    let radarChart = echarts.init(document.getElementById('category-radar'));
+
+    
+
+    let option = {
+        title: {
+            left: 'center',
+            text: '文章分类雷达图',
+            textStyle: {
+                fontWeight: 500,
+                fontSize: 22
+            }
+        },
+        tooltip: {},
+        radar: {
+            name: {
+                textStyle: {
+                    color: '#3C4858'
+                }
+            },
+            indicator: [{"name":"瞎吹","max":2}],
+            nameGap: 5,
+            center: ['50%','55%'],
+            radius: '66%'
+        },
+        series: [{
+            type: 'radar',
+            color: ['#3ecf8e'],
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data : [
+                {
+                    value : [1],
+                    name : '文章分类数量'
+                }
+            ]
+        }]
+    };
+
+    radarChart.setOption(option);
+</script>
 
     
 
